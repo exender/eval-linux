@@ -23,6 +23,6 @@ do
     fi
 
 done
-rm -rf /tmp/out/log #detruit le fichier de log apres operation 
+
 rm -rf /tmp/out/lock #detruit le fichier lock apres operation 
 
