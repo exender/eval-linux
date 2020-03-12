@@ -17,10 +17,12 @@ do
 			echo "Fichier " $fich " non compressé " >> /tmp/out/log #donne tous les noms de fichier non compréssé
 		fi
 	fi
-    if [ -e ${LOCKFILE} ] && kill -0 `cat ${LOCKFILE}`; then #protege le fichier quand il est lancer et crée un code d'erreur si on veut le relancer quand il est actif 
-    echo "Code : 22"
-    exit
-    fi
+   for i in $(ls /tmp/in)
+        do
+            if test /tmp/out/lock; then 
+                echo "Code : 22"
+                exit
+        fi
 
 done
 
